@@ -1,12 +1,36 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://wood.png" type="Texture" id=2]
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.473, 0 )
 
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 0, 0 )
+
+[node name="Body" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+height = 2.0
+
+[node name="Foot L" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 0.867, 0.125, -0.5 )
+radius = 0.25
+
+[node name="Foot R" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 0.867, 0.125, 0.5 )
+radius = 0.25
+
+[node name="Arm R" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 0.726469, -0.687199, 0, 0.687199, 0.726469, 0, 0, 0, 1, 0.225421, 1.19306, 1.14941 )
+radius = 0.25
+
+[node name="Arm R2" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 0.726469, -0.687199, 0, 0.687199, 0.726469, 0, 0, 0, 1, 0.225, 1.193, -1.149 )
+radius = 0.25
+
+[node name="Head" type="CSGSphere" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47263, 0 )
+radius = 0.75

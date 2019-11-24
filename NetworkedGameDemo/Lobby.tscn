@@ -18,6 +18,5 @@ margin_top = 106.0
 margin_right = 634.0
 margin_bottom = 145.0
 text = "Join Game"
-
 [connection signal="pressed" from="buttonHost" to="." method="_on_buttonHost_pressed"]
 [connection signal="pressed" from="buttonJoin" to="." method="_on_buttonJoin_pressed"]
